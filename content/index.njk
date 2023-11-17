@@ -5,9 +5,11 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
+<header>
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+</header>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
@@ -26,3 +28,7 @@ numberOfLatestPostsToShow: 3
 	{%- endfor %}
 </ul>
 #}
+
+<footer>
+	 <p>&#169 2023</p>
+</footer>
